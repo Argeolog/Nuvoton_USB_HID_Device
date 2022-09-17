@@ -1,0 +1,15 @@
+--cpu=Cortex-M23
+".\obj\system_m251.o"
+".\obj\startup_m251.o"
+".\obj\descriptors.o"
+".\obj\main.o"
+".\obj\hid_transfer.o"
+".\obj\clk.o"
+".\obj\retarget.o"
+".\obj\usbd.o"
+".\obj\sys.o"
+".\obj\uart.o"
+--library_type=microlib --ro-base 0x00000000 --entry 0x00000000 --rw-base 0x20000000 --entry Reset_Handler --first __Vectors --strict
+--map --first='startup_M251.o(RESET)' --datacompressor=off --info=inline --entry Reset_Handler --summary_stderr --info summarysizes --map --load_addr_map_info
+--info sizes --info totals
+--list ".\lst\USBD_HID_Transfer.map" -o .\obj\USBD_HID_Transfer.axf
